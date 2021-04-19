@@ -1,7 +1,29 @@
 /**
- * 1. Declare two functions: calculateGolfAverages and calculateTotalAverages
+ * 1. Declare two functions: calculateRoundAverages and calculateTotalAverages
  */
 
+function calculateRoundAverages(arrays){
+  let average = 0
+  let return_average = []
+  for(i=0;i < arrays.length ; i++){
+      for(y = 0; y < arrays[i].length;y++){
+        
+         average = average + arrays[i][y] 
+      }
+      console.log("the average score for round",i+1,"is",(average/arrays[i].length).toFixed(2))
+      return_average.push(average/arrays[i].length)
+      average = 0
+  }
+  return return_average
+}
+function calculateTotalAverages(arrays){
+  let new_array = calculateRoundAverages(arrays)
+  let average= 0
+  for(i=0;i< new_array.length; i++){
+    average= average + new_array[i]
+  }
+  console.log("The average of averages is",(average/new_array.length).toFixed(2))
+}
 
 /**
  * 2. Implement calculateGolfAverages
@@ -14,6 +36,8 @@
  * An example of the expected output
  * "The average score for round 4 is 1.33"
 */
+
+
 
 
 /**
