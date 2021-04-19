@@ -2,27 +2,28 @@
  * 1. Declare two functions: calculateRoundAverages and calculateTotalAverages
  */
 
-function calculateRoundAverages(arrays){
+function calculateRoundAverages(arrays) {
   let average = 0
   let return_average = []
-  for(i=0;i < arrays.length ; i++){
-      for(y = 0; y < arrays[i].length;y++){
-        
-         average = average + arrays[i][y] 
-      }
-      console.log("the average score for round",i+1,"is",(average/arrays[i].length).toFixed(2))
-      return_average.push(average/arrays[i].length)
-      average = 0
+  for (i = 0; i < arrays.length; i++) {
+    for (y = 0; y < arrays[i].length; y++) {
+
+      average = average + arrays[i][y]
+    }
+    console.log("the average score for round", i + 1, "is", (average / arrays[i].length).toFixed(2))
+    return_average.push(average / arrays[i].length)
+    average = 0
   }
   return return_average
 }
-function calculateTotalAverages(arrays){
+
+function calculateTotalAverages(arrays) {
   let new_array = calculateRoundAverages(arrays)
-  let average= 0
-  for(i=0;i< new_array.length; i++){
-    average= average + new_array[i]
+  let average = 0
+  for (i = 0; i < new_array.length; i++) {
+    average = average + new_array[i]
   }
-  console.log("The average of averages is",(average/new_array.length).toFixed(2))
+  console.log("The average of averages is", (average / new_array.length).toFixed(2))
 }
 
 /**
@@ -35,9 +36,7 @@ function calculateTotalAverages(arrays){
  * 
  * An example of the expected output
  * "The average score for round 4 is 1.33"
-*/
-
-
+ */
 
 
 /**
@@ -56,14 +55,14 @@ function calculateTotalAverages(arrays){
 
 ///! ----- PLEASE DO NOT EDIT BELOW THIS ---- !///
 const golfScores = [
-  [1,2,2,-1,5,1,2,1,6,2,1,0,5,3,0,1,1,0],
-  [1,1,3,0,3,2,2,1,6,2,1,0,3,1,-1,2,1,0],
-  [2,1,2,1,4,1,2,1,6,2,1,0,-1,3,0,2,1,0],
-  [0,2,3,0,3,1,1,1,6,2,1,0,0,2,0,1,1,0],
-  [0,1,5,-2,3,2,2,1,6,2,1,0,-2,3,0,2,1,0],
-  [1,1,3,-1,4,2,1,1,6,2,1,0,-1,4,0,4,1,0],
-  [0,2,1,0,3,0,-1,1,6,2,1,0,0,3,-2,2,1,0],
-  [0,1,1,0,2,1,-1,1,4,2,1,1,0,2,-1,1,0,0],
+  [1, 2, 2, -1, 5, 1, 2, 1, 6, 2, 1, 0, 5, 3, 0, 1, 1, 0],
+  [1, 1, 3, 0, 3, 2, 2, 1, 6, 2, 1, 0, 3, 1, -1, 2, 1, 0],
+  [2, 1, 2, 1, 4, 1, 2, 1, 6, 2, 1, 0, -1, 3, 0, 2, 1, 0],
+  [0, 2, 3, 0, 3, 1, 1, 1, 6, 2, 1, 0, 0, 2, 0, 1, 1, 0],
+  [0, 1, 5, -2, 3, 2, 2, 1, 6, 2, 1, 0, -2, 3, 0, 2, 1, 0],
+  [1, 1, 3, -1, 4, 2, 1, 1, 6, 2, 1, 0, -1, 4, 0, 4, 1, 0],
+  [0, 2, 1, 0, 3, 0, -1, 1, 6, 2, 1, 0, 0, 3, -2, 2, 1, 0],
+  [0, 1, 1, 0, 2, 1, -1, 1, 4, 2, 1, 1, 0, 2, -1, 1, 0, 0],
 ];
 calculateRoundAverages(golfScores);
 calculateTotalAverages(golfScores);
